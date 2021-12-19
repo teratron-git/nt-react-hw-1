@@ -1,6 +1,11 @@
+import { useState } from "react"
+import "./App.css"
+import ShopItemClass from "./components/ShopItemClass"
 import ShopItemFunc from "./components/ShopItemFunc"
 
 const App = () => {
+  const [task, setTask] = useState("2")
+
   const item = {
     brand: "Tiger of Sweden",
     title: "Leonard coat",
@@ -11,16 +16,47 @@ const App = () => {
     currency: "£",
   }
 
+  const handler = (e: any) => {
+    setTask(e.target.value)
+  }
+
   return (
-    <div className="container">
-      <div className="background-element" />
-      <div className="highlight-window">
-        <div className="highlight-overlay" />
+    <>
+      <div style={{ position: "absolute", zIndex: 9 }}>
+        <input type="radio" id="contactChoice1" name="contact" value="1" defaultChecked onChange={handler} />
+        <label htmlFor="contactChoice1">Task1</label>
+        <input type="radio" id="contactChoice2" name="contact" value="2" onChange={handler} />
+        <label htmlFor="contactChoice2">Task2</label>
+        <input type="radio" id="contactChoice3" name="contact" value="3" onChange={handler} />
+        <label htmlFor="contactChoice3">Task3</label>
       </div>
-      <div className="window">
-        <ShopItemFunc item={item} />
-      </div>
-    </div>
+
+      {task == "1" && (
+        <div className="container">
+          <div className="background-element" />
+          <div className="highlight-window">
+            <div className="highlight-overlay" />
+          </div>
+          <div className="window">
+            <ShopItemFunc item={item} />
+          </div>
+        </div>
+      )}
+
+      {task == "2" && (
+        <div className="container">
+          <div className="background-element" />
+          <div className="highlight-window">
+            <div className="highlight-overlay" />
+          </div>
+          <div className="window">
+            <ShopItemClass item={item} />
+          </div>
+        </div>
+      )}
+
+      {task == "3" && <div className="container">КАЛЕНДАРЬ</div>}
+    </>
   )
 }
 
