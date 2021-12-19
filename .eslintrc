@@ -69,7 +69,9 @@
     "jsx-a11y/no-noninteractive-element-interactions": "off",
     "import/no-extraneous-dependencies": "warn",
     "prefer-arrow-callback": "warn",
-    "react/function-component-definition": ["warn", { "namedComponents": "arrow-function" }]
+    "react/function-component-definition": ["warn", { "namedComponents": "arrow-function" }],
+    "no-restricted-exports": "off",
+    "react/no-unused-prop-types": "warn"
   },
   "ignorePatterns": ["build/"]
 }
