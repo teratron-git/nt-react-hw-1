@@ -1,7 +1,12 @@
 {
   "extends": ["react-app", "react-app/jest", "airbnb", "plugin:prettier/recommended"],
   "rules": {
-    "prettier/prettier": "warn",
+    "prettier/prettier": [
+      "warn",
+      {
+        "endOfLine": "auto"
+      }
+    ],
     "react/jsx-key": "warn",
     "newline-before-return": "warn",
     "eqeqeq": "off",
