@@ -1,15 +1,6 @@
-type IProps = {
-  item: {
-    brand: string
-    title: string
-    description: string
-    descriptionFull: string
-    price: number
-    currency: string
-  }
-}
+import { IItem } from "../../App"
 
-const ShopItemFunc = ({ item }: IProps) => {
+const ShopItemFunc = ({ item }: IItem) => {
   return (
     <div className="main-content">
       <h2>{item.brand}</h2>

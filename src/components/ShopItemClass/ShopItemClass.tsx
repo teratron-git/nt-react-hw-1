@@ -1,17 +1,7 @@
 import { Component } from "react"
+import { IItem } from "../../App"
 
-type IProps = {
-  item: {
-    brand: string
-    title: string
-    description: string
-    descriptionFull: string
-    price: number
-    currency: string
-  }
-}
-
-class ShopItemClass extends Component<IProps, any> {
+class ShopItemClass extends Component<IItem, any> {
   render() {
     return (
       <div className="main-content">
