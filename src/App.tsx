@@ -18,6 +18,8 @@ export interface IItem {
 const App = () => {
   const [task, setTask] = useState("1")
 
+  const now: Date = new Date(2017, 2, 8)
+
   const handler = (e: any) => {
     setTask(e.target.value)
   }
@@ -85,7 +87,7 @@ const App = () => {
         </div>
       )}
 
-      {task == "3" && <Calendar />}
+      {task == "3" && <Calendar date={now} />}
     </>
   )
 }
