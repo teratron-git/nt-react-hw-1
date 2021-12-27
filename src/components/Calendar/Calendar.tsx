@@ -1,11 +1,15 @@
-import moment from "moment"
+import moment, { Moment } from "moment"
 import "moment/locale/ru"
 import "./Calendar.css"
 
-const Calendar = ({ date }) => {
+interface IProps {
+  date: Date
+}
+
+const Calendar = ({ date }: IProps) => {
   moment.updateLocale("ru", { week: { dow: 1 } })
 
-  let allDays = []
+  let allDays: Moment[] = []
   const weeks = []
   const daysInWeek = [0, 1, 2, 3, 4, 5, 6]
 
