@@ -1,5 +1,4 @@
 import { useState } from "react"
-import "./App.css"
 import Calendar from "./components/Calendar"
 import ShopItemClass from "./components/ShopItemClass"
 import ShopItemFunc from "./components/ShopItemFunc"
